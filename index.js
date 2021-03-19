@@ -43,4 +43,5 @@ const readline = require('readline').createInterface({
     }
     console.log(a)
     console.log(`Done! Took ${anschläge} keystrokes to find "${word}"`)
+    process.exit(0)
 })
