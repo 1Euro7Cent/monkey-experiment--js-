@@ -11,15 +11,20 @@ const readline = require('readline').createInterface({
   }
   
   readline.question(`What do you want to search for? `, (w) => {
-    //console.log(`Hi ${name}!`)
-    readline.close()
+      readline.close()
+    var liste = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     
     
     
     var word = replaceall(w.toLowerCase(), ' ','')
-    //var word = w. toLowerCase()
+    var estimated = 1
+    for (let a in word){
+        //console.log(a)
+        estimated = estimated * liste.length
+        if (a === word.length) break
+    }
+    console.log(`estimated keystrokes:`, estimated)
     
-    var liste = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     console.log('trying to find', word)
     var anschläge = 0
     var current_list = []
